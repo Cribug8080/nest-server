@@ -23,9 +23,7 @@ export class AppService {
     const date = new Date();
     const fileName = `${date.getFullYear()}${date.getMonth()}${date.getDate()}-${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
     await shell.exec(`${path}/build.sh ${fileName}`);
-    const file = createReadStream(
-      join(`${path}/log`, `${path}/${fileName}.txt`),
-    );
+    const file = createReadStream(join(`${path}/log`, `${fileName}.txt`));
     file.pipe(res as any);
   }
 }
