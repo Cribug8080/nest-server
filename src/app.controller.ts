@@ -1,4 +1,4 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Controller, Get, Post, Res } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -10,8 +10,17 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('/deploy-react')
-  deployReact() {
-    return this.appService.deployReact();
+  @Post('/deploy-react')
+  deployReact(@Res() res: Response) {
+    return this.appService.deployReact(res);
+  }
+
+  @Post('/deploy-vue')
+  deployVue(@Res() res: Response) {
+    return this.appService.deployVue(res);
+  }
+  @Post('/deploy-main')
+  deployMain(@Res() res: Response) {
+    return this.appService.deployMain(res);
   }
 }
