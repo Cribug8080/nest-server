@@ -13,7 +13,7 @@ export class AppService {
     await this.deploy(res, '/root/web/qk-react');
   }
   async deployVue(@Res() res: Response) {
-    await this.deploy(res, '/root/web/qk-vue');
+    await this.deploy(res, '/root/web/qk-vue3');
   }
   async deployMain(@Res() res: Response) {
     await this.deploy(res, '/root/web/qk-main');
