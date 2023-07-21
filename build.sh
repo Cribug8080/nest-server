@@ -8,5 +8,6 @@ echo '开始拉代码' >> $filename
 git pull >> $filename
 
 echo '开始build' >> $filename
+yarn
 
 yarn build  >> $filename
