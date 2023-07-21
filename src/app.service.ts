@@ -10,13 +10,13 @@ export class AppService {
     return 'Hello World!';
   }
   async deployReact(@Res() res: Response) {
-    await this.deploy(res, '/usr/local/web/qk-react');
+    await this.deploy(res, '/root/web/qk-react');
   }
   async deployVue(@Res() res: Response) {
-    await this.deploy(res, '/usr/local/web/qk-vue');
+    await this.deploy(res, '/root/web/qk-vue');
   }
   async deployMain(@Res() res: Response) {
-    await this.deploy(res, '/usr/local/web/qk-main');
+    await this.deploy(res, '/root/web/qk-main');
   }
 
   async deploy(res: Response, path: string) {
